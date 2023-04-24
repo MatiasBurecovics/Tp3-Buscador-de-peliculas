@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel=stylesheet href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <title>Api Search Peliculas</title>
+    <title>Api Search</title>
 </head>
 <body>
     <section class="container">
-        <div class="logo-escrito">Search Api - Javascript</div>
-        <div class="search">
-            <input id="input" type="text" placeholder="Inserte la pelicula que buscara">
-            <button type="button"onclick="getApiSearch()" id="estilo-boton" class="btn primary full">Buscar</button>
+        <div class="logo-escrito">Buscador de Películas</div>
+        <div class="busqueda">
+            <input id="input" type="text" placeholder="Inserta la pelicula">
+            <button type="button"onclick="busquedaApi()" id="estilo-boton" class="btn primary full">Buscar</button>
         </div>
-        <article id="ingreso"></article>
+        <div id="ingreso"></div>
     </section>
     <script src="script.js"></script>
 </body>
