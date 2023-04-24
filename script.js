@@ -1,23 +1,25 @@
 const inicio = document.getElementById('ingreso').innerHTML = `Inserte su busqueda en el buscador`
 
 
-function getApiSearch() {
+const busquedaApi=()=> {
 
-  
-    const valuesInput = document.getElementById('input').value;
-    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=1e6296feeb7565b54f1f8ea079f7e70e&language=es&query=${valuesInput}`;
-    const obtener = { method: 'GET'};
-    fetch(apiUrl, obtener)
-    .then(response => response.json())
-    .then(data => {
-        let filtradoSearch = data.results[0]
-        if ( filtradoSearch === undefined ) {
-
-            document.getElementById("ingreso")
-            .innerHTML = `La pelicula no se encontro`;
-
-      
-        } else {
+    const input = document.getElementById('input').value;
+    console.log(input)
+    const t = `t=${input}`
+    const apiUrl = `http://www.omdbapi.com/?apikey=ff89313c&${t}`;
+    
+    fetch(apiUrl)
+    .then(res=>res.json())
+     .then(data=> 
+        {
+            if (data.res && data.res.length > 0) {
+                let filtradoSearch = data.res[0];
+             
+              } else {
+                document.getElementById("ingreso").innerHTML = `La pelicula no se encontro`;
+              }
+        
+ {
             
             const { poster_path, title, overview, vote_average, vote_count, release_date } = filtradoSearch;
 
@@ -55,18 +57,6 @@ function getApiSearch() {
             `;
 
         }
-
-    function starRanking() {
-
-        const star = Math.round(`${filtradoSearch.vote_average}`)
-        var text = "";
-        
-        for (i = 0; i < star; i++) {
-            text += `<i class="fas fa-star"></i>`;
-         }
-        document.getElementById("estrellas").innerHTML = text;
-    }
-    starRanking();
 
 
     console.log(`test ${filtradoSearch.id}`)
