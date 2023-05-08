@@ -1,0 +1,73 @@
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #FFFF00;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+
+  #Actors {
+    font-style: italic;
+  }
+  
+  #ImdbRating {
+    color: #F5A623;
+    font-weight: bold;
+  }
+  
+  #Released {
+    font-weight: bold;
+  }
+  
+  #Ratings {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #Ratings li {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  #Country {
+    font-style: italic;
+  }
+  
+  #Genre {
+    font-style: italic;
+  }
+  
+  #Plot {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+  .btn-primary {
+    background-color: #F5A623;
+    color: white;
+    border-color: #F5A623;
+  }
