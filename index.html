@@ -9,6 +9,7 @@
     <title>API Search</title>
 </head>
 <body>
+    
     <section class="container my-5">
         <div class="row">
             <div class="col-md-6">
@@ -23,10 +24,21 @@
                         <select class="form-select" id="tipo">
                             <option value="">Cualquier tipo</option>
                             <option value="movie">Película</option>
-                            <option value="serie">Serie</option>
+                            <option value="series">Serie</option>
                             <option value="episode">Episodio</option>
                         </select>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="season-input" class="form-label" id="temp">Temporada</label>
+                        <input type="hidden" class="form-control" id="temporada" placeholder="Ingrese la temporada">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="season-input" class="form-label" id="ep">Episodio</label>
+                        <input type="hidden" class="form-control" id="episodio" placeholder="Ingrese el episodio">
+                    </div>
+                    
                     <div class="mb-3">
                         <label for="year-input" class="form-label">Año</label>
                         <input type="text" class="form-control" id="año" placeholder="Ingrese el año">
