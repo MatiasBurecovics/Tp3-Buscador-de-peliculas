@@ -1,11 +1,9 @@
-/* Estilos para el buscador de películas */
 
-/* Estilo para el fondo */
 body {
   background-color: #FFFF00;
 }
 
-/* Estilos para el encabezado */
+
 header {
   background-color: #ffbf00;
   padding: 20px;
@@ -19,7 +17,7 @@ header h1 {
   margin: 0;
 }
 
-/* Estilos para el formulario */
+
 form {
   margin-top: 50px;
 }
@@ -114,3 +112,6 @@ tbody tr:nth-child(even) {
     max-width: 100%;
   }
   
+  #temp, #ep {
+    display: none;
+  }
