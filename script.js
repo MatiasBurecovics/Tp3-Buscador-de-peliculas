@@ -129,8 +129,7 @@ const buscarPelicula = (t, tipo, año, temporada, episodio) => {
         tdTipo.textContent = tipo
         imgPoster.src = poster
         btnDetalle.textContent = 'Ver Detalles'
-        btnDetalle.setAttribute('href', 'Detalle.html')
-        btnDetalle.onclick =  function() {DetallePelicula(res.Actors,res.Runtime,res.imdbRating, res.Released, res.Ratings, res.Writer, res.Country,res.Genre,res.Plot)}        
+        btnDetalle.onclick =  function() {DetallePelicula(res.Actors,res.Runtime,res.imdbRating, res.Released, res.Writer, res.Country,res.Genre,res.Plot)}        
         tdPoster.appendChild(imgPoster)
         tdBoton.appendChild(btnDetalle)
 
@@ -157,11 +156,18 @@ const buscarPelicula = (t, tipo, año, temporada, episodio) => {
       tablaResultados.appendChild(tr)
     })
 }
-const DetallePelicula = (Actors,Runtime,imdbRating, Released, Ratings, Writer, Country,Genre,Plot) =>
+const DetallePelicula = (Actors,Runtime,imdbRating, Released, Writer, Country,Genre,Plot) =>
 {
 
-  localStorage.setItem(Actors,Runtime,imdbRating, Released, Ratings, Writer, Country,Genre,Plot)
-  const detalle = document.getElementById('detalle')
-  document.getElementById("list-Actores").value = localStorage.Actors
+  localStorage.setItem("Actors", Actors);
+  localStorage.setItem("Runtime", Runtime);
+  localStorage.setItem("imdbRating", imdbRating);
+  localStorage.setItem("Released", Released);
+  localStorage.setItem("Writer", Writer);
+  localStorage.setItem("Country", Country);
+  localStorage.setItem("Genre", Genre);
+  localStorage.setItem("Plot", Plot);
+  window.location.href = 'Detalle.html';
+
 }
 
