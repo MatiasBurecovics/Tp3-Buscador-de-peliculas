@@ -50,7 +50,7 @@ form {
   background-color: #fff;
 }
 
-/* Estilo para el botón */
+
 .btn-primary {
   background-color: #ffbf00;
   border: none;
@@ -67,7 +67,6 @@ form {
   cursor: pointer;
 }
 
-/* Estilo para la tabla */
 table {
   margin-top: 50px;
   width: 100%;
