@@ -1,0 +1,116 @@
+/* Estilos para el buscador de películas */
+
+/* Estilo para el fondo */
+body {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #ffbf00;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px #555;
+  margin: 0;
+}
+
+/* Estilos para el formulario */
+form {
+  margin-top: 50px;
+}
+
+.form-label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.form-control {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+
+.form-select {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+/* Estilo para el botón */
+.btn-primary {
+  background-color: #ffbf00;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px 30px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+  background-color: #ffa500;
+  cursor: pointer;
+}
+
+/* Estilo para la tabla */
+table {
+  margin-top: 50px;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+    color: black;
+  }
+
+tbody tr:nth-child(even) {
+  background-color: #0000;
+}
+
+#resultados {
+    font-size: 14px;
+  }
+  
+  #resultados td {
+    vertical-align: middle;
+  }
+  
+  #resultados th {
+    font-weight: bold;
+  }
+  
+  #resultados tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #resultados tr:hover {
+    background-color: #ddd;
+  }
+  
+  #resultados img {
+    max-height: 200px;
+    max-width: 100%;
+  }
+  
