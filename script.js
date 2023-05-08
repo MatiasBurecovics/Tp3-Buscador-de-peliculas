@@ -12,19 +12,17 @@ const tablaResultados = document.getElementById('resultados');
 
 
 const t = `t=${inputNombre.value}`;
-const tipo = `type=${selectTipo.value}`;
-const año = `y=${inputAño.value}`;
+const tipo = `&type=${selectTipo.value}`;
+const año = `&y=${inputAño.value}`;
 
-  let apiUrl = `https://www.omdbapi.com/?apikey=a4e21d35&${t}&${tipo}&${año}`;
-
+  let apiUrl = `https://www.omdbapi.com/?apikey=a4e21d35&${t}`;
   if (selectTipo.value !== '') {
-    apiUrl += `&type=${selectTipo.value}`;
+    apiUrl += tipo;
   }
-
   if (inputAño.value !== '') {
-    apiUrl += `&y=${inputAño.value}`;
+    apiUrl += año;
   }
-
+  console.log(apiUrl)
   fetch(apiUrl)
     .then(res => res.json())
     .then(res => {
@@ -53,3 +51,4 @@ const año = `y=${inputAño.value}`;
 };
 
 botonBuscar.addEventListener('click', buscarPeliculas);
+
