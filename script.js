@@ -1,30 +1,55 @@
-const inicio = document.getElementById('ingreso').innerHTML = `Inserte su busqueda en el buscador`
+const botonBuscar = document.getElementById('buscar');
 
-//Nombre 
-//type 
-//Año 
+const buscarPeliculas = () => {
+    const inputNombre = document.getElementById('input');
+const selectTipo = document.getElementById('tipo');
+const inputAño = document.getElementById('año');
+if (!inputNombre.value) {
+    alert('Por favor ingrese el título de la película');
+    return;
+  }
+const tablaResultados = document.getElementById('resultados');
 
-const busquedaApi = () => {
 
-    const inputNombre = document.getElementById('inputNombre').value;
-    //const inputTipo = document.getElementById('inputTipo').value;
-    //const inputAño = document.getElementById('inputAño').value;
-    const t = `t=${inputNombre}`
-    //const y = `y=${inputAño}`
-    //const type = `type=${inputTipo}`
-    const apiUrl = `http://www.omdbapi.com/?apikey=ff89313c&${t}`;
-   if(y.lenght > 2) {
-        
-    }
-    if (type.lenght > 5 ) {
-        
-    }
-    console.log(apiUrl)
-    fetch(apiUrl)
-        .then(res => res.json())
-        .then(res => { 
-            var filtradoSearch = res[0];
-            console.log(res)})
-        .catch(err => console.error(`La pelicula no se encontro`, err));
+const t = `t=${inputNombre.value}`;
+const tipo = `type=${selectTipo.value}`;
+const año = `y=${inputAño.value}`;
 
+  let apiUrl = `https://www.omdbapi.com/?apikey=a4e21d35&${t}&${tipo}&${año}`;
+
+  if (selectTipo.value !== '') {
+    apiUrl += `&type=${selectTipo.value}`;
+  }
+
+  if (inputAño.value !== '') {
+    apiUrl += `&y=${inputAño.value}`;
+  }
+
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(res => {
+      if (res.Response === 'False') {
+        tablaResultados.innerHTML = `<tr><td colspan="4">${res.Error}</td></tr>`;
+      } else {
+
+        const pelicula = res.Title;
+        const año = res.Year;
+        const tipo = res.Type;
+        const poster = res.Poster;
+        tablaResultados.innerHTML = `
+          <tr>
+            <td>${pelicula}</td>
+            <td>${año}</td>
+            <td>${tipo}</td>
+            <td><img src="${poster}" alt="Poster"></td>
+          </tr>
+        `;
+      }
+    })
+    .catch(error => {
+ 
+      tablaResultados.innerHTML = `<tr><td colspan="4">Error al buscar las películas</td></tr>`;
+    });
 };
+
+botonBuscar.addEventListener('click', buscarPeliculas);
